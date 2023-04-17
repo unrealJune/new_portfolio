@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_portfolio/pages/projects.dart';
 import '/pages/home.dart';
 void main() {
   runApp(const MyApp());
@@ -51,8 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
   double groupAligment = -1.0;
   List<Color> seeds = [
     Color.fromRGBO(188, 0, 74, 1.0),
-    Color.fromRGBO(183, 30, 203, 1.0),
     Color.fromRGBO(3, 128, 107, 1.0),
+    Color.fromRGBO(241, 0, 192, 1.0),
   ];
   bool dark = false;
 
@@ -69,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       Container(
           key: const ValueKey<int>(1),
-          child: Home(color: seeds[_selectedIndex],)
+          child: Projects(color: seeds[_selectedIndex],)
       ),
       Container(
           key: const ValueKey<int>(2),
@@ -85,7 +86,41 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       child: Scaffold(
         body: SafeArea(
-          child: Row(
+          //check if device is too small for rail and switch to bottom nav
+          child: MediaQuery.of(context).size.width <  700 ?
+          Column(
+            children: [
+              Expanded(
+                child: _children[_selectedIndex],
+              ),
+              BottomNavigationBar(
+                items: const [
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.home_outlined),
+                    label: 'Home',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.code_rounded),
+                    label: 'Projects',
+                  ),
+                  BottomNavigationBarItem(
+                    icon: Icon(Icons.person_outlined),
+                    label: 'About Me',
+                  ),
+
+                ],
+                currentIndex: _selectedIndex,
+                onTap: (int index) {
+                  setState(() {
+                    _selectedIndex = index;
+                  });
+                },
+
+
+
+              )
+            ],
+          ): Row(
             children: <Widget>[
               NavigationRail(
                 selectedIndex: _selectedIndex,
