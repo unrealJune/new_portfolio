@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:new_portfolio/pages/projects.dart';
 import '/pages/home.dart';
+import 'package:url_launcher/url_launcher.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -51,13 +53,11 @@ class _MyHomePageState extends State<MyHomePage> {
   bool showTrailing = false;
   double groupAligment = -1.0;
   List<Color> seeds = [
-    Color.fromRGBO(188, 0, 74, 1.0),
     Color.fromRGBO(3, 128, 107, 1.0),
-    Color.fromRGBO(241, 0, 192, 1.0),
+    Color.fromRGBO(188, 0, 74, 1.0),
+    Color.fromRGBO(187, 104, 2, 1.0),
   ];
   bool dark = false;
-
-
 
 
   @override
@@ -104,15 +104,29 @@ class _MyHomePageState extends State<MyHomePage> {
                     label: 'Projects',
                   ),
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.person_outlined),
-                    label: 'About Me',
+                    icon: Icon(FontAwesomeIcons.terminal, size: 15,),
+                    label: 'Bash',
                   ),
 
                 ],
+
+
                 currentIndex: _selectedIndex,
                 onTap: (int index) {
-                  setState(() {
+                  setState(()  {
+                    int oldIndex = _selectedIndex;
+
                     _selectedIndex = index;
+                    if(_selectedIndex == 2) {
+                      const url = 'https://cli.junephilip.com/';
+                      if ( true) {
+                         launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                      _selectedIndex = oldIndex;
+                    }
+
                   });
                 },
 
@@ -127,7 +141,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 groupAlignment: groupAligment,
                 onDestinationSelected: (int index) {
                   setState(() {
+                    int oldIndex = _selectedIndex;
                     _selectedIndex = index;
+                    if(_selectedIndex == 2) {
+                      const url = 'https://cli.junephilip.com/';
+                      if ( true) {
+                         launch(url);
+                      } else {
+                        throw 'Could not launch $url';
+                      }
+                      _selectedIndex = oldIndex;
+                    }
+
                   });
                 },
                 trailing: IconButton(
@@ -143,18 +168,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 destinations: const <NavigationRailDestination>[
                   NavigationRailDestination(
                     icon: Icon(Icons.home_outlined),
-                    selectedIcon: Icon(Icons.home_outlined),
+                    selectedIcon: Icon(Icons.home),
                     label: Text('Home'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.code_rounded),
+                    icon: Icon(Icons.code_outlined),
                     selectedIcon: Icon(Icons.code),
                     label: Text('Projects'),
                   ),
                   NavigationRailDestination(
-                    icon: Icon(Icons.person_outlined),
+                    icon: Icon(FontAwesomeIcons.terminal, size: 15,),
                     selectedIcon: Icon(Icons.person),
-                    label: Text('About Me'),
+                    label: Text('Bash'),
                   ),
                 ],
               ),
