@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   BottomNavigationBarItem(
                     icon: Icon(FontAwesomeIcons.terminal, size: 15,),
-                    label: 'Bash',
+                    label: 'CLI',
                   ),
 
                 ],
@@ -179,7 +179,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   NavigationRailDestination(
                     icon: Icon(FontAwesomeIcons.terminal, size: 15,),
                     selectedIcon: Icon(Icons.person),
-                    label: Text('Bash'),
+                    label: Text('CLI'),
                   ),
                 ],
               ),

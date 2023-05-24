@@ -58,7 +58,7 @@ class Projects extends StatelessWidget {
                           textStyle: GoogleFonts.jetBrainsMono(
                             color: Theme.of(context).colorScheme.primary,
                             textStyle: const TextStyle(
-                                fontSize: 64.0,
+                                fontSize: 50.0,
                                 fontWeight: FontWeight.w600
                             ),
                           ),
@@ -124,7 +124,7 @@ class Projects extends StatelessWidget {
                 child: buildCard(context,
                     Image.asset("assets/images/refinery.jpg", fit: BoxFit.cover,),
 
-                    "Chevron SWE Intern", "Summer 2022 - Houston,TX", "Worked on an agile release train to complete assigned sprint backlogs for an Angular based application with a .NET backend. 10Notably, worked with an international team in Kazakhstan to localize live production applications to Kazakh and Russian, with i18n compliant code.", [
+                    "Chevron SWE Intern", "Summer 2022 - Houston,TX", "Worked on an agile release train to complete assigned sprint backlogs for an Angular based application with a .NET backend. Notably, worked with an international team in Kazakhstan to localize live production applications to Kazakh and Russian, with i18n compliant code.", [
                       Icon(FontAwesomeIcons.angular,
                         color: Theme.of(context).colorScheme.secondary,
                       ),
@@ -147,7 +147,7 @@ class Projects extends StatelessWidget {
               ShowUp(
                 delay: 800,
                 child: buildCard(context,
-                    Image.asset('assets/images/Ramiel_Front.webp', fit: BoxFit.cover,)
+                    Image.asset('assets/images/eva.png', fit: BoxFit.cover,)
                     ,
                     "Evangelion", "2018-22 - Mount Olive,NJ", "Developed turn-key cross platform application (iOS, Android, Web) designed to assist local communities in planning rideshares, organize cultural events, host materials, and communicate. Programmed using Dart and the Flutter framework and utilized Firestore backend.", [
                       FlutterLogo(style: FlutterLogoStyle.markOnly,),
@@ -232,7 +232,7 @@ class Projects extends StatelessWidget {
                         children: [
                           Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text("<<<< C L I C K >>>>", style: GoogleFonts.jetBrainsMono(
+                              child: Text("<< C L I C K >>", style: GoogleFonts.jetBrainsMono(
                                 color: Theme.of(context).colorScheme.secondary,
                                 textStyle: const TextStyle(
                                     fontSize: 30.0,
@@ -292,7 +292,7 @@ class Projects extends StatelessWidget {
                   children: [
                     Container(
 
-                        height: MediaQuery.of(context).size.height * 0.3,
+                        height: MediaQuery.of(context).size.height * 0.45,
                         decoration: top == null ? BoxDecoration(
                           gradient: LinearGradient(
                             begin: Alignment.topLeft,
