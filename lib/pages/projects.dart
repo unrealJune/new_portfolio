@@ -3,12 +3,10 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 import '../supportingFiles/ShowUp.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class Projects extends StatelessWidget {
   //get context from main.dart
@@ -20,7 +18,6 @@ class Projects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    debugPrint("COLOR IS: " +  color.toString());
     return Theme(
         data: ThemeData(
           colorSchemeSeed: color,
@@ -38,71 +35,62 @@ class Projects extends StatelessWidget {
             ),
 
             children: [
-              Card(
-                color: Theme.of(context).colorScheme.surface,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                elevation: 0,
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    color: Theme.of(context).colorScheme.outline,
+              ShowUp(
+                delay: 150,
+                child: Card(
+                  color: Theme.of(context).colorScheme.surface,
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(
+                      color: Theme.of(context).colorScheme.outline,
+                    ),
+                    borderRadius: const BorderRadius.all(Radius.circular(12)),
                   ),
-                  borderRadius: const BorderRadius.all(Radius.circular(12)),
-                ),
-                child: Column(
-                  children: [
-                    AnimatedTextKit(
+                  child: Column(
+                    children: [
+                     Text("Projects", style: GoogleFonts.jetBrainsMono(
+                       color: Theme.of(context).colorScheme.primary,
+                       textStyle: const TextStyle(
+                           fontSize: 50.0,
+                           fontWeight: FontWeight.w600
+                       ),
 
-                      animatedTexts: [
-                        TypewriterAnimatedText(
-                          'Projects',
-                          textStyle: GoogleFonts.jetBrainsMono(
-                            color: Theme.of(context).colorScheme.primary,
-                            textStyle: const TextStyle(
-                                fontSize: 50.0,
-                                fontWeight: FontWeight.w600
-                            ),
+                  ),
+                     ),
+
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("Some of my projects, from internships to personal projects, they're all here. Click on any of them to learn more.", style: GoogleFonts.jetBrainsMono(
+                          color: Theme.of(context).colorScheme.secondary,
+                          textStyle: const TextStyle(
+                              fontSize: 16.0,
+                              fontWeight: FontWeight.w400
                           ),
-                          speed: const Duration(milliseconds: 150),
-                          textAlign: TextAlign.start,
+                        ),),
+                      ),
+                      Spacer(),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text("S C R O L L > > >", style: GoogleFonts.jetBrainsMono(
+                          color: Theme.of(context).colorScheme.secondary,
+                          textStyle: const TextStyle(
+                              fontSize: 30.0,
+                              fontWeight: FontWeight.w800
+                          ),
 
-
-                        ),
-
-
-                      ],
-
-                      repeatForever: false,
-                      isRepeatingAnimation: false,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text("Some of my projects, from internships to personal projects, they're all here. Click on any of them to learn more.", style: GoogleFonts.jetBrainsMono(
-                        color: Theme.of(context).colorScheme.secondary,
-                        textStyle: const TextStyle(
-                            fontSize: 16.0,
-                            fontWeight: FontWeight.w400
-                        ),
-                      ),),
-                    ),
-                    Spacer(),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text("S C R O L L > > >", style: GoogleFonts.jetBrainsMono(
-                        color: Theme.of(context).colorScheme.secondary,
-                        textStyle: const TextStyle(
-                            fontSize: 30.0,
-                            fontWeight: FontWeight.w800
-                        ),
-
-                      ),)
-                    )
-                  ],
-                )
+                        ),)
+                      )
+                    ],
+                  )
+                ),
               ),
               ShowUp(
                 delay: 400,
-                child: buildCard(context, null,
-                    "Portfolio", "2023 - College Park, MD", "The very page that you're on right now! This website is basically practice in implementing Material 3 design for websites, and creating responsive web apps with Flutter 3.", [
+                child: buildCard(context,
+                  Image.asset("assets/images/portfolioicon.png", fit: BoxFit.cover,)
+                  ,
+                    "Portfolio", "2023 - College Park, MD", "The very page that you're on right now! This website is basically practice in implementing Material 3 design for websites, and creating responsive web apps with Flutter 3. It is also my first foray into web deployments, using Github Actions.", [
 
 
                  const FlutterLogo(style: FlutterLogoStyle.markOnly,),
@@ -149,7 +137,7 @@ class Projects extends StatelessWidget {
                 child: buildCard(context,
                     Image.asset('assets/images/eva.png', fit: BoxFit.cover,)
                     ,
-                    "Evangelion", "2018-22 - Mount Olive,NJ", "Developed turn-key cross platform application (iOS, Android, Web) designed to assist local communities in planning rideshares, organize cultural events, host materials, and communicate. Programmed using Dart and the Flutter framework and utilized Firestore backend.", [
+                    "Evangelion", "2018-22 - Mount Olive,NJ", "Developed turn-key cross platform application (iOS, Android, Web) designed to assist local communities in planning rideshares, organize cultural events, host materials, and communicate. Programmed using Dart and the Flutter framework and utilized Firestore backend. Uses Codemagic to handle CI/CD.", [
                       FlutterLogo(style: FlutterLogoStyle.markOnly,),
                       SizedBox(width: 10,),
                       Icon(FontAwesomeIcons.fireFlameCurved,
@@ -191,11 +179,14 @@ class Projects extends StatelessWidget {
               ShowUp(
                 delay: 1200,
                 child: buildCard(context,
-                    null
+                    Image.asset("assets/images/fire.webp", fit: BoxFit.cover,)
+
                     ,
                     "Molecular Research", "2021-23 - College Park, MD", "Worked with the UMD FIRE research program to conduct research into Aptamer selection for the creation of biomarkers for use in point-of-care diagnostics. Analyzed unknown proteins using BLAST and JMOL  to find their purpose and functionality. (ASSN: JZ984658, JZ984659).", [
                       Icon(FontAwesomeIcons.dna,
+
                         color: Theme.of(context).colorScheme.secondary,
+
                       ),
                       SizedBox(width: 10,),
                       Icon(FontAwesomeIcons.microscope,

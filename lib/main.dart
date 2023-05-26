@@ -16,13 +16,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 
       title: 'June Philip',
+      themeAnimationCurve: Curves.easeInOut,
+      themeAnimationDuration: const Duration(milliseconds: 500),
       theme: ThemeData(
         useMaterial3: true,
+
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
         useMaterial3: true,
       ),
+      themeMode: ThemeMode.system,
       home: const MyHomePage(title: 'June Philip'),
     );
   }
@@ -79,11 +83,14 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
 
-    return Theme(
+    return AnimatedTheme(
       data: ThemeData(
         colorSchemeSeed: seeds[_selectedIndex],
         brightness: dark ? Brightness.dark : Brightness.light,
       ),
+      curve: Curves.easeInOut,
+      duration: const Duration(milliseconds: 150),
+
       child: Scaffold(
         body: SafeArea(
           //check if device is too small for rail and switch to bottom nav
