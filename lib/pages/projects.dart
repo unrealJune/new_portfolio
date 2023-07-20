@@ -86,6 +86,31 @@ class Projects extends StatelessWidget {
                 ),
               ),
               ShowUp(
+                delay: 300,
+                child: buildCard(context,
+                    Image.asset("assets/images/c1.jpg", fit: BoxFit.cover,)
+                    ,
+                    "CapitalOne Technology Internship", "Summer 2023 - McLean, VA", "Worked with a small team of interns to develop an Angular based content management system to replace legacy software. A unique focus was placed on the usage of NLP and GPT models for generating content to fit brand guidelines and modern day design principles. Importantly, communicated with management and product owners to identify flaws in legacy software, and improve the new solution.", [
+
+                      SizedBox(width: 10,),
+                      Icon(FontAwesomeIcons.angular,
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                      SizedBox(width: 10,),
+                      Icon(FontAwesomeIcons.github,
+                        color: Theme.of(context).colorScheme.secondary,
+                      ),
+                      SizedBox(width: 10,),
+                      Icon(FontAwesomeIcons.brain,
+                        color: Theme.of(context).colorScheme.secondary,
+
+                      )
+
+                    ]
+                ),
+              ),
+
+              ShowUp(
                 delay: 400,
                 child: buildCard(context,
                   Image.asset("assets/images/portfolioicon.png", fit: BoxFit.cover,)
@@ -133,7 +158,7 @@ class Projects extends StatelessWidget {
                 ),
               ),
               ShowUp(
-                delay: 800,
+                delay: 750,
                 child: buildCard(context,
                     Image.asset('assets/images/eva.png', fit: BoxFit.cover,)
                     ,
@@ -155,7 +180,7 @@ class Projects extends StatelessWidget {
                 ),
               ),
               ShowUp(
-                delay: 1000,
+                delay: 800,
                 child: buildCard(context,
                     null
                     ,
@@ -177,7 +202,7 @@ class Projects extends StatelessWidget {
                 ),
               ),
               ShowUp(
-                delay: 1200,
+                delay: 800,
                 child: buildCard(context,
                     Image.asset("assets/images/fire.webp", fit: BoxFit.cover,)
 
@@ -200,7 +225,7 @@ class Projects extends StatelessWidget {
                 ),
               ),
               ShowUp(
-                delay: 1400,
+                delay: 800,
                 child:      Card(
                     color: Theme.of(context).colorScheme.surface,
                     clipBehavior: Clip.antiAliasWithSaveLayer,
