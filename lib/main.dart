@@ -13,12 +13,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    precacheImage(AssetImage("assets/images/build.gif"), context);
-    precacheImage(AssetImage("assets/images/c1.jpg"), context);
-    precacheImage(AssetImage("assets/images/eva.png"), context);
-    precacheImage(AssetImage("assets/images/fire.webp"), context);
-    precacheImage(AssetImage("assets/images/portfolioicon.png"), context);
-    precacheImage(AssetImage("assets/images/refinery.jpg"), context);
+    precacheImage(const AssetImage("assets/images/build-min.gif"), context);
+    precacheImage(const AssetImage("assets/images/c1.jpg"), context);
+    precacheImage(const AssetImage("assets/images/eva.png"), context);
+    precacheImage(const AssetImage("assets/images/fire.webp"), context);
+    precacheImage(const AssetImage("assets/images/portfolioicon.png"), context);
+    precacheImage(const AssetImage("assets/images/refinery.jpg"), context);
 
 
     return MaterialApp(
@@ -56,9 +56,9 @@ class _MyHomePageState extends State<MyHomePage> {
   bool showTrailing = false;
   double groupAligment = -1.0;
   List<Color> seeds = [
-    Color.fromRGBO(3, 128, 107, 1.0),
-    Color.fromRGBO(188, 0, 74, 1.0),
-    Color.fromRGBO(187, 104, 2, 1.0),
+    const Color.fromRGBO(3, 128, 107, 1.0),
+    const Color.fromRGBO(188, 0, 74, 1.0),
+    const Color.fromRGBO(187, 104, 2, 1.0),
   ];
   bool dark = false;
 
