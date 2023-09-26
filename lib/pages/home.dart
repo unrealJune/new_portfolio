@@ -50,7 +50,7 @@ class Home extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20.0),
                       image: DecorationImage(
-                        image: const AssetImage('assets/images/build.gif'),
+                        image: const AssetImage('assets/images/build-min.gif'),
                         colorFilter: ColorFilter.mode(Colors.black.withOpacity(0.4), BlendMode.darken),
                         fit: BoxFit.cover,
                       ),
