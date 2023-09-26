@@ -14,6 +14,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     double titleSize = MediaQuery.of(context).size.width  > 600 ? 64 : 32;
     double subtitleSize = MediaQuery.of(context).size.width  > 600 ? 20 : 12;
 
